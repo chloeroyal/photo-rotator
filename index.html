@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body style="margin:0;background:#111;display:flex;justify-content:center;align-items:center;height:100vh;">
+<img id="pic" style="max-width:95%;max-height:95%;border-radius:12px;">
+
+<script>
+const images = [
+  "PASTE_IMAGE_LINK_1",
+  "PASTE_IMAGE_LINK_2",
+  "PASTE_IMAGE_LINK_3"
+];
+
+let i = localStorage.getItem("imgIndex") || 0;
+i = parseInt(i);
+
+document.getElementById("pic").src = images[i % images.length];
+
+localStorage.setItem("imgIndex", i + 1);
+</script>
+</body>
+</html>
